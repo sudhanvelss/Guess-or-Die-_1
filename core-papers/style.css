@@ -122,6 +122,28 @@ body{
     justify-content: center;
     width: 700px;
 }
+.alignment-2{
+    font-size: 35px;
+    line-height: 3rem;
+    color: purple;
+    display: flex;
+    justify-content: center;
+    width: 700px;
+}
+.let-start {
+    height:50px;
+    width: 180px;
+    border-radius: 10px;
+    background-color:purple;
+    margin-top: 500px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.let-start:hover{
+    background-color: white;
+    color: black;
+}
 .right-arrow img{
     height: 50px;
     width: 50px;
@@ -129,15 +151,23 @@ body{
 .right-arrow{
     padding-top: 550px;
 }
-.front-image img{
-    width: 600px;
-    height: 100%;
-    position: relative;
+.front-page{
+    display: flex;
+    justify-content: center;
 }
 .front-page img{
-    position: absolute;
-    width: 100px;
+    height: 650px;
+    width: 850px;
+    position: relative;
+}
+.front-page button img{
     height: 100px;
-    left: 720px;
-    top: 440px;
+    width: 100px ;
+}
+.front-page button{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 550px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
 }
