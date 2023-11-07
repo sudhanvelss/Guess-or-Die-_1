@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans:ital,wght@1,300&family=Poppins:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.container{
+    width: 850px;
+    background: yellow;
+    display: flex;
+    gap: 70px;
+    align-items: flex-end;
+    padding: 60px 40px;
+    border-radius: 10px;
+}
+.merchant-box img{
+    max-width: 270px;
+}
+.merchant-box h1{
+    font-size: 1.45rem;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color:black;
+}
+.word-display{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.word-display .letter{
+    width: 28px;
+    border-bottom: 3px solid black;
+    margin-bottom: 40px;
+}
+.word-display .letter_guessed{
+    border-color: transparent;
+    margin: -40px 0 35px;
+}
+.Game-box h4{
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.Game-box h4 b{
+    font-weight: 600;
+}
+.Game-box .Guess-text b{
+    color: red;
+}
+.Game-box .Keyboard{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.Keyboard button{
+    color:white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor:pointer;
+    outline: none;
+    border: none;
+    padding: 7px;
+    border-radius: 4px;
+    background-color: purple;
+    width: calc(100% / 9 - 5px);
+}
+.Keyboard button:hover{
+    background-color: palevioletred;
+}
+.final-page {
+    position: fixed;
+}
+.lost{
+    width: 425px;
+    height: 425px;
+    border: 5px solid black;
+    border-radius: 10px;
+    text-align: center;
+    background-color:purple;
+    color:white;
+    padding: 20px;
+}
+.lost img{
+    height: 250px;
+}
+.lost p b{
+    color: rgb(0, 255, 0);
+}
+.play-again{
+    height:35px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: yellow;
+    margin-top: 10px;
+}
+.lost p{
+    padding-top: 10px;
+}
+.play-again:hover{
+    background-color: white;
+}
+.alignment{
+    font-size: 35px;
+    line-height: 3rem;
+    color: purple;
+    display: flex;
+    justify-content: center;
+    width: 700px;
+}
+.right-arrow img{
+    height: 50px;
+    width: 50px;
+}
+.right-arrow{
+    padding-top: 550px;
+}
+.front-image img{
+    width: 600px;
+    height: 100%;
+    position: relative;
+}
+.front-page img{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 720px;
+    top: 440px;
+}
