@@ -1,6 +1,3 @@
-const Keyboard_div = document.querySelector(".Keyboard")
-const word_display = document.querySelector(".word-display")
-
 var RandomWords = [
     {
         word: "guitar",
@@ -263,22 +260,3 @@ var RandomWords = [
         hint: "Exceptionally clever, talented, or impressive."
     },
 ];
-
-
-var Random_words = () => {
-    console.log("in")
-    // to select the random words in the given list we making this fucntion.
-    let { word, hint } =  RandomWords[Math.floor(Math.random() * RandomWords.length)];
-    console.log( word);
-    document.querySelector(".hint-text b").innerHTML = hint;
-    word_display.innerHTML = word.split("").map(() => `<li class="letter"> </li>`).join(""); 
-}
-
-// just creating shortcut for keyboard in html to js. 
-for(let i = 97; i <= 122; i++){
-    const button = document.createElement("button")
-    button.innerHTML = String.fromCharCode(i);
-    Keyboard_div.appendChild(button);
-}
-
-Random_words(); 

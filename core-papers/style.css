@@ -118,29 +118,29 @@ body{
     font-size: 35px;
     line-height: 3rem;
     color: purple;
-    display: flex;
-    justify-content: center;
     width: 700px;
 }
 .alignment-2{
     font-size: 35px;
     line-height: 3rem;
     color: purple;
-    display: flex;
-    justify-content: center;
-    width: 700px;
+    width: 600px;
 }
-.let-start {
+.alignment-3{
+    height:50px;
+    width: 180px;
+}
+.alignment-3 button {
     height:50px;
     width: 180px;
     border-radius: 10px;
     background-color:purple;
-    margin-top: 500px;
     color: white;
     text-transform: uppercase;
     font-size: 20px;
+    margin-top: 50px;
 }
-.let-start:hover{
+.alignment-3 button:hover{
     background-color: white;
     color: black;
 }
@@ -170,4 +170,31 @@ body{
     width: 100px;
     top: 550px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}
+
+@media(max-width: 782px){
+    .container{
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+    .merchant-box img{
+        max-width: 200px;
+    }
+    .merchant-box h1{
+        display: none;
+    }
+    .alignment-2{
+        flex-direction: column;
+        width: 400px;
+        padding-left: 1%;
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+        line-height: 2.5rem;
+    }
+    .alignment-3{
+        align-items: center;
+        margin-left: 30%;
+    }
 }
