@@ -1,8 +1,11 @@
 const Keyboard_div = document.querySelector(".Keyboard")
+const merchant_body = document.querySelector(".merchant-box img")
+const Guess_text = document.querySelector(".Guess-text b")
 const word_display = document.querySelector(".word-display")
-
+let current_word, correctLetters = [], wrong_Guess_Count = 0;
+const max_guesses = 6;
 var RandomWords = [
-    {
+    { 
         word: "guitar",
         hint: "A musical instrument with strings."
     },
@@ -266,12 +269,35 @@ var RandomWords = [
 
 
 var Random_words = () => {
-    console.log("in")
     // to select the random words in the given list we making this fucntion.
     let { word, hint } =  RandomWords[Math.floor(Math.random() * RandomWords.length)];
+    current_word = word;
     console.log( word);
     document.querySelector(".hint-text b").innerHTML = hint;
-    word_display.innerHTML = word.split("").map(() => `<li class="letter"> </li>`).join(""); 
+    word_display.innerHTML = word.split("").map(() => `<li class="letter"></li>`).join(""); 
+
+}
+const initGame = (button, letterclicked) => {
+    if(current_word.includes(letterclicked)){
+        [...current_word].forEach((letter, index) =>{
+            if(letter === letterclicked){
+                correctLetters.push(letter);
+                word_display.querySelectorAll("li")[index].innerHTML = letter;
+                word_display.querySelectorAll("li")[index].classlist.add("guessed")
+            }
+        })
+    } else{
+        wrong_Guess_Count++;
+        merchant_body.src = `./../images/hangman-${wrong_Guess_Count}.svg`;
+    }
+    if (correctLetters.length == current_word && correctLetters < max_guesses){
+        console.log(window.location.reload);
+    }else if (correctLetters !== current_word && correctLetters.length >= max_guesses){
+        console.log(window.location.href = "gameover.html")
+    }
+
+    button.disabled = true;
+    Guess_text.innerHTML = `${wrong_Guess_Count} / ${max_guesses}`; 
 }
 
 // just creating shortcut for keyboard in html to js. 
@@ -279,6 +305,8 @@ for(let i = 97; i <= 122; i++){
     const button = document.createElement("button")
     button.innerHTML = String.fromCharCode(i);
     Keyboard_div.appendChild(button);
+    button.addEventListener("click", e => initGame(e.target, String.fromCharCode(i)));
 }
 
 Random_words(); 
+
