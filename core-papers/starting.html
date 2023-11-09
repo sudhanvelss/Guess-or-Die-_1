@@ -8,8 +8,15 @@
 </head>
 <body style="background-color: purple;">
     <div class="front-page">
-        <img src="./../images/front-image.png" alt="Front-page-image">
-        <button><img src="./../images/play-button.png" alt="play-button"></button>
+        <img src="./../images/Guess or Die.png">
+        <button class="go"></button>
     </div>
 </body>
+<script>
+    const start = document.getElementsByClassName("go")[0];
+
+    start.addEventListener("click", () => {
+        window.location.href = "story_line_page.html";
+    });
+</script>
 </html>

@@ -283,7 +283,6 @@ const initGame = (button, letterclicked) => {
             if(letter === letterclicked){
                 correctLetters.push(letter);
                 word_display.querySelectorAll("li")[index].innerHTML = letter;
-                word_display.querySelectorAll("li")[index].classlist.add("guessed")
             }
         })
     } else{
