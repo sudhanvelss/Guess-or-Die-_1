@@ -8,9 +8,23 @@
 </head>
 <body style="background-color: yellow;">
     <div class="button0">
-    <div><button><b>Easy</b></button></div>
-    <div><button><b>Medium</b></button></div>
-    <div><button><b>Difficult</b></button></div>
-</div>
+    <div><button class="play-again1"><b>Easy</b></button></div>
+    <div><button class="play-again2"><b>Medium</b></button></div>
+    <div><button class="play-again3"><b>Difficult</b></button></div>
+    </div>
 </body>
+<script>
+    const Easy_index = document.querySelector(".play-again1");
+    Easy_index.addEventListener("click", function() {
+        window.location.href = "Easy_index.html";
+    });
+    const Medium_index = document.querySelector(".play-again2");
+    Medium_index.addEventListener("click", function() {
+        window.location.href = "Medium_index.html";
+    });
+    const Difficult_index = document.querySelector(".play-again3");
+    Difficult_index.addEventListener("click", function() {
+        window.location.href = "Difficult_index.html";
+    });
+</script>
 </html>
