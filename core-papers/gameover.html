@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body style=" background-color:yellow;">
     <div class="final-page">
         <div class="lost">
             <img src="./../images/lost.gif" alt="lost_gif">
             <h2><b>Game Over!</b></h2>
-            <p>The correct word is: <b>Adventure</b></p>
+            <p>The correct word is: <b class="answer"></b></p>
             <button class="play-again"><b>Play Again</b></button>
         </div>
     </div>
 </body>
+<script>
+    const play_again = document.querySelector(".play-again");
+    play_again.addEventListener("click", ()=> {
+        window.location.href="index.html";
+    })
+    const finish = new Audio('./Audio Folder/Fail to answer.wav')
+    finish.play()
+    console.log("audio", finish)
+    let word = localStorage.getItem("word");
+    document.querySelector('.answer').textContent = word
+</script>
 </html>
