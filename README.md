@@ -15,4 +15,3 @@ Start the Game: Begin each level by facing a new hangman puzzle. The hidden word
 Make Your Guesses: Choose letters one by one to unveil the mystery word. Be cautious – every incorrect guess activates a dangerous element of the game.
 
 Race Against Time: The clock is ticking, and the consequences of your guesses are unfolding. Quick thinking and strategic choices are essential to surviving the challenges.
-
