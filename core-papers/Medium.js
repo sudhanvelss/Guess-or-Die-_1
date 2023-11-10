@@ -87,17 +87,17 @@ var RandomWords = [
     }
 ];
 
-console.log("ch", correctLetters )
+console.log("ch", correctLetters)
 
 var Random_words = () => {
     // to select the random words in the given list we making this function.
-    let { word, hint } =  RandomWords[Math.floor(Math.random() * RandomWords.length)];
-    localStorage.setItem('word', word)
-    current_word = word;
-    console.log( word);
-    document.querySelector(".hint-text b").innerHTML = hint;
-    word_display.innerHTML = word.split("").map(() => `<li class="letter"></li>`).join(""); 
-
+    let { Word, Hint} =  RandomWords[Math.floor(Math.random() * RandomWords.length)];
+    localStorage.setItem('word', Word)
+    current_word = Word;
+    console.log( Word);
+    document.querySelector(".hint-text b").innerHTML = Hint;
+    word_display.innerHTML = Word.split("").map(() => `<li class="letter"></li>`).join(""); 
+  
 }
 const initGame = (button, letterclicked) => {
     if(current_word.includes(letterclicked)){
@@ -131,4 +131,3 @@ for(let i = 97; i <= 122; i++){
 }
 
 Random_words(); 
-
