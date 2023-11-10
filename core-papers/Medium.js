@@ -4,269 +4,89 @@ const Guess_text = document.querySelector(".Guess-text b")
 const word_display = document.querySelector(".word-display")
 let current_word, correctLetters = "", wrong_Guess_Count = 0;
 const max_guesses = 6;
-let audio1 = new Audio("")
 var RandomWords = [
-    // { 
-    //     word: "guitar",
-    //     hint: "A musical instrument with strings."
-    // },
-    // {
-    //     word: "oxygen",
-    //     hint: "A colorless, odorless gas essential for life."
-    // },
-    // {
-    //     word: "mountain",
-    //     hint: "A large natural elevation of the Earth's surface."
-    // },
-    // {
-    //     word: "painting",
-    //     hint: "An art form using colors on a surface to create images or expression."
-    // },
     {
-        word: "astronomy",
-        hint: "The scientific study of celestial objects and phenomena."
-    },
-    // {
-    //     word: "football",
-    //     hint: "A popular sport played with a spherical ball."
-    // },
-    // {
-    //     word: "chocolate",
-    //     hint: "A sweet treat made from cocoa beans."
-    // },
-    // {
-    //     word: "butterfly",
-    //     hint: "An insect with colorful wings and a slender body."
-    // },
-    // {
-    //     word: "history",
-    //     hint: "The study of past events and human civilization."
-    // },
-    // {
-    //     word: "pizza",
-    //     hint: "A savory dish consisting of a round, flattened base with toppings."
-    // },
-    {
-        word: "jazz",
-        hint: "A genre of music characterized by improvisation and syncopation."
-    },
-    // {
-    //     word: "camera",
-    //     hint: "A device used to capture and record images or videos."
-    // },
-    {
-        word: "diamond",
-        hint: "A precious gemstone known for its brilliance and hardness."
-    },
-    // {
-    //     word: "adventure",
-    //     hint: "An exciting or daring experience."
-    // },
-    {
-        word: "science",
-        hint: "The systematic study of the structure and behavior of the physical and natural world."
-    },
-    // {
-    //     word: "bicycle",
-    //     hint: "A human-powered vehicle with two wheels."
-    // },
-    // {
-    //     word: "sunset",
-    //     hint: "The daily disappearance of the sun below the horizon."
-    // },
-    // {
-    //     word: "coffee",
-    //     hint: "A popular caffeinated beverage made from roasted coffee beans."
-    // },
-    // {
-    //     word: "dance",
-    //     hint: "A rhythmic movement of the body often performed to music."
-    // },
-    {
-        word: "galaxy",
-        hint: "A vast system of stars, gas, and dust held together by gravity."
+        Word: "umbrella",
+        Hint: "It opens up to shield you from rain or sun."
     },
     {
-        word: "orchestra",
-        hint: "A large ensemble of musicians playing various instruments."
-    },
-    // {
-    //     word: "volcano",
-    //     hint: "A mountain or hill with a vent through which lava, rock fragments, hot vapor, and gas are ejected."
-    // },
-    {
-        word: "novel",
-        hint: "A long work of fiction, typically with a complex plot and characters."
+        Word: "bicycle",
+        Hint: "It has two wheels and you pedal to move forward."
     },
     {
-        word: "sculpture",
-        hint: "A three-dimensional art form created by shaping or combining materials."
+        Word: "mirror",
+        Hint: "It reflects your image, but it's not a person."
     },
     {
-        word: "symphony",
-        hint: "A long musical composition for a full orchestra, typically in multiple movements."
+        Word: "key",
+        Hint: "It unlocks doors but isn't made of wood or metal."
     },
     {
-        word: "architecture",
-        hint: "The art and science of designing and constructing buildings."
-    },
-    // {
-    //     word: "ballet",
-    //     hint: "A classical dance form characterized by precise and graceful movements."
-    // },
-    // {
-    //     word: "astronaut",
-    //     hint: "A person trained to travel and work in space."
-    // },
-    // {
-    //     word: "waterfall",
-    //     hint: "A cascade of water falling from a height."
-    // },
-    // {
-    //     word: "technology",
-    //     hint: "The application of scientific knowledge for practical purposes."
-    // },
-    {
-        word: "rainbow",
-        hint: "A meteorological phenomenon that is caused by reflection, refraction, and dispersion of light."
+        Word: "book",
+        Hint: "It's full of pages, stories, and knowledge."
     },
     {
-        word: "universe",
-        hint: "All existing matter, space, and time as a whole."
+        Word: "clock",
+        Hint: "It tells time with hands that go 'round and 'round."
     },
     {
-        word: "piano",
-        hint: "A musical instrument played by pressing keys that cause hammers to strike strings."
+        Word: "camera",
+        Hint: "It captures images with the click of a button."
     },
     {
-        word: "vacation",
-        hint: "A period of time devoted to pleasure, rest, or relaxation."
+        Word: "shoes",
+        Hint: "You wear them on your feet to walk with ease."
     },
     {
-        word: "rainforest",
-        hint: "A dense forest characterized by high rainfall and biodiversity."
+        Word: "glasses",
+        Hint: "They help you see clearly, perched on your nose."
     },
     {
-        word: "theater",
-        hint: "A building or outdoor area in which plays, movies, or other performances are staged."
+        Word: "guitar",
+        Hint: "Strings and frets, it makes music when strummed."
     },
     {
-        word: "telephone",
-        hint: "A device used to transmit sound over long distances."
+        Word: "basket",
+        Hint: "It holds your things and has a handle on top."
     },
     {
-        word: "language",
-        hint: "A system of communication consisting of words, gestures, and syntax."
+        Word: "television",
+        Hint: "It displays shows and news with moving images."
     },
     {
-        word: "desert",
-        hint: "A barren or arid land with little or no precipitation."
+        Word: "pen",
+        Hint: "It writes in ink, not with a pencil's lead."
     },
     {
-        word: "sunflower",
-        hint: "A tall plant with a large yellow flower head."
+        Word: "wallet",
+        Hint: "It holds your money, cards, and ID."
     },
     {
-        word: "fantasy",
-        hint: "A genre of imaginative fiction involving magic and supernatural elements."
+        Word: "broom",
+        Hint: "With bristles and a handle, it sweeps things away."
     },
     {
-        word: "telescope",
-        hint: "An optical instrument used to view distant objects in space."
+        Word: "microwave",
+        Hint: "It heats your food with waves of energy."
     },
     {
-        word: "breeze",
-        hint: "A gentle wind."
+        Word: "computer",
+        Hint: "It processes data, with a keyboard and screen."
     },
     {
-        word: "oasis",
-        hint: "A fertile spot in a desert where water is found."
+        Word: "hammer",
+        Hint: "It pounds nails, strong and keen."
     },
     {
-        word: "photography",
-        hint: "The art, process, or practice of creating images by recording light or other electromagnetic radiation."
+        Word: "globe",
+        Hint: "It's a small Earth that you can hold and spin."
     },
     {
-        word: "safari",
-        hint: "An expedition or journey, typically to observe wildlife in their natural habitat."
-    },
-    {
-        word: "planet",
-        hint: "A celestial body that orbits a star and does not produce light of its own."
-    },
-    {
-        word: "river",
-        hint: "A large natural stream of water flowing in a channel to the sea, a lake, or another such stream."
-    },
-    {
-        word: "tropical",
-        hint: "Relating to or situated in the region between the Tropic of Cancer and the Tropic of Capricorn."
-    },
-    {
-        word: "mysterious",
-        hint: "Difficult or impossible to understand, explain, or identify."
-    },
-    {
-        word: "enigma",
-        hint: "Something that is mysterious, puzzling, or difficult to understand."
-    },
-    {
-        word: "paradox",
-        hint: "A statement or situation that contradicts itself or defies intuition."
-    },
-    {
-        word: "puzzle",
-        hint: "A game, toy, or problem designed to test ingenuity or knowledge."
-    },
-    {
-        word: "whisper",
-        hint: "To speak very softly or quietly, often in a secretive manner."
-    },
-    {
-        word: "shadow",
-        hint: "A dark area or shape produced by an object blocking the light."
-    },
-    {
-        word: "secret",
-        hint: "Something kept hidden or unknown to others."
-    },
-    {
-        word: "curiosity",
-        hint: "A strong desire to know or learn something."
-    },
-    {
-        word: "unpredictable",
-        hint: "Not able to be foreseen or known beforehand; uncertain."
-    },
-    {
-        word: "obfuscate",
-        hint: "To confuse or bewilder someone; to make something unclear or difficult to understand."
-    },
-    {
-        word: "unveil",
-        hint: "To make known or reveal something previously secret or unknown."
-    },
-    {
-        word: "illusion",
-        hint: "A false perception or belief; a deceptive appearance or impression."
-    },
-    {
-        word: "moonlight",
-        hint: "The light from the moon."
-    },
-    {
-        word: "vibrant",
-        hint: "Full of energy, brightness, and life."
-    },
-    {
-        word: "nostalgia",
-        hint: "A sentimental longing or wistful affection for the past."
-    },
-    {
-        word: "brilliant",
-        hint: "Exceptionally clever, talented, or impressive."
-    },
+        Word: "puzzle",
+        Hint: "Pieces fit together to create a picture or scene."
+    }
 ];
+
 console.log("ch", correctLetters )
 
 var Random_words = () => {
