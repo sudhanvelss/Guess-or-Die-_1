@@ -109,7 +109,7 @@ const initGame = (button, letterclicked) => {
         })
     } else{
         wrong_Guess_Count++;
-        merchant_body.src = `./../images/hangman-${wrong_Guess_Count}.svg`;
+        merchant_body.src = `./images/hangman-${wrong_Guess_Count}.svg`;
     }
     if (correctLetters.length === current_word.length){
     
